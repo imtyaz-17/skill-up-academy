@@ -1,0 +1,44 @@
+.login-container {
+    padding: 4rem;
+}
+
+.login-images {
+    background-color: #e7f8ee;
+}
+
+.shape-1 {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    background-color: #309255;
+    top: 50px;
+    left: 20%;
+    z-index: -1;
+}
+
+.shape-1 img {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+
+.login-title {
+    font-size: 2.25rem;
+}
+
+.form-field {
+    margin-top: 20px;
+}
+
+.btn-hover-dark:hover {
+    background-color: #212832 !important;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: #309255 !important;
+    border-color: #309255 !important;
+    color: #fff;
+    transition: all 0.3s ease;
+}
