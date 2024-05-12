@@ -1,0 +1,8 @@
+.side-bar {
+    background-color: #e7f8ee;
+    text-decoration: none;
+}
+
+.side-btn:hover {
+    color: #fff !important;
+}

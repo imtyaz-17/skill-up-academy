@@ -3,8 +3,9 @@ import { Button, Col, Container, Form, FormControl, Image, InputGroup, Row } fro
 import loginImg from '../../../assets/images/register-login.png';
 import shape1 from '../../../assets/images/shape-1.png';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+
 import toast from 'react-hot-toast';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
     const [formData, setFormData] = useState({
