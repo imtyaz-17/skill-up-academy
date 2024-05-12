@@ -11,7 +11,7 @@ const SideBar = () => {
             .then(data => setCourses(data))
     }, [])
     return (
-        <div className='side-bar mt-3 border rounded p-3'>
+        <div className='side-bar mt-3 border rounded p-2'>
             <h5>Course Categories:</h5>
             {
                 courses.map(course =>

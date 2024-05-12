@@ -1,7 +1,7 @@
 import React from 'react';
 import { CardGroup, Col, Container, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
-import SideBar from '../Shared/SideBar/SideBar';
+import SideBar from './SideBar/SideBar';
 import CourseCard from './CourseCard/CourseCard';
 
 const Courses = () => {
