@@ -18,7 +18,7 @@ const CourseCard = ({ course }) => {
                         <div className="d-flex align-items-center mt-3">
                             <Image roundedCircle className="mb-0 me-3" src={instructor?.instImg} style={{ height: '8vh' }} />
                             <div>
-                                <p className="mb-0 fw-medium">{instructor?.instname}</p>
+                                <span className="mb-0 fw-medium">{instructor?.instname}</span>
                             </div>
                         </div>
                     </Card.Text>

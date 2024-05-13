@@ -101,10 +101,10 @@ const Register = () => {
                 <Col lg={6} sm={12}>
                     <div className='login-images p-3 mt-2 text-center border rounded-2 position-relative z-1'>
                         <div className='shape-1 position-absolute'>
-                            <Image src={shape1} fluid />
+                            <Image src={shape1} />
                         </div>
                         <div className='login-img'>
-                            <Image src={loginImg} fluid />
+                            <Image src={loginImg} />
                         </div>
                     </div>
                 </Col>

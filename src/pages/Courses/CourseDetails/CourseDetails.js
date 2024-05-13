@@ -28,7 +28,7 @@ const CourseDetails = () => {
                 </Col>
                 <Col lg={9}>
                     <Card className="mt-3">
-                        <Card.Img variant="top" src={img} style={{ height: '50vh' }} fluid />
+                        <Card.Img variant="top" src={img} style={{ height: '50vh' }} />
                         <Card.Body>
                             <Row>
                                 <Col lg={8}>

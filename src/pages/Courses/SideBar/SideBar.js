@@ -3,19 +3,22 @@ import './SideBar.css'
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 const SideBar = () => {
-    const [courses, setCourses] = useState([]);
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/courses')
+        fetch('http://localhost:5000/course-categories')
             .then(resp => resp.json())
-            .then(data => setCourses(data))
+            .then(data => setCategories(data))
     }, [])
+    console.log(categories);
     return (
         <div className='side-bar mt-3 border rounded p-2'>
             <h5>Course Categories:</h5>
             {
-                courses.map(course =>
-                    < Button key={course.id} variant="outline-success" className='mt-2 d-block w-100 '><Link className='text-decoration-none text-dark side-btn' to={`/course/${course.id}`}>{course.name}</Link></Button>)
+
+                categories.map(category =>
+                    <Link className='text-decoration-none text-dark side-btn' to={`/category/${category.id}`}>
+                        < Button key={category.id} variant="outline-success" className='mt-2 d-block w-100 '>{category.name}</Button></Link>)
             }
         </div >
     );

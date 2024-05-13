@@ -6,6 +6,7 @@ import Register from "../pages/Login/Register/Register";
 import TermsAndCondition from "../pages/Shared/TermsAndConditionTermsAndCondition/TermsAndCondition";
 import Courses from "../pages/Courses/Courses";
 import CourseDetails from "../pages/Courses/CourseDetails/CourseDetails";
+import CourseCategory from "../pages/CourseCategory/CourseCategory";
 
 export const routes = createBrowserRouter([
     {
@@ -15,6 +16,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/category/:id',
+                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`),
+                element: <CourseCategory></CourseCategory>
             },
             {
                 path: '/courses',

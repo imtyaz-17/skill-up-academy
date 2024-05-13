@@ -9,7 +9,7 @@ const Header = () => {
         <Navbar collapseOnSelect expand="lg" className="fw-bold nav-bar">
             <Container className='border border-success rounded-3 py-1 mt-1'>
                 <Navbar.Brand as={NavLink} to='/'>
-                    <Image src={logo} fluid width={50} height={50} /> Skill Up - Academy
+                    <Image src={logo} width={50} height={50} /> Skill Up - Academy
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" className='toggle-bar' />
                 <Navbar.Collapse id="responsive-navbar-nav">
