@@ -1,0 +1,34 @@
+a {
+    text-decoration: none !important;
+    color: #212832 !important;
+}
+
+a:hover {
+    color: #309255 !important;
+    /* font-weight: bold; */
+}
+
+ul {
+    list-style: none;
+}
+
+.widget-logo {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 25px;
+}
+
+.widget-logo img {
+    width: 100%;
+    /* overflow: hidden; */
+}
+
+.footer-ul ul li {
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.social-icons li {
+    padding: 0px 10px;
+}

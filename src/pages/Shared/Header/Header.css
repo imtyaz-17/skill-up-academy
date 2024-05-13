@@ -17,6 +17,6 @@
 }
 
 .navbar-nav .nav-link.nav-btn:hover {
-    color: #fff;
+    color: #fff !important;
     background-color: #309255 !important;
 }

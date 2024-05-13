@@ -6,7 +6,7 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" className="fw-bold nav-bar">
+        <Navbar collapseOnSelect expand="lg" className="fw-bold nav-bar sticky-lg-top">
             <Container className='border border-success rounded-3 py-1 mt-1'>
                 <Navbar.Brand as={NavLink} to='/'>
                     <Image src={logo} width={50} height={50} /> Skill Up - Academy

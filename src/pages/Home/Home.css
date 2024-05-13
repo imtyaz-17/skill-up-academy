@@ -4,7 +4,88 @@
     border-radius: 100% !important;
 }
 
+.section-title {
+    margin-top: 25px;
+    padding-right: 15px;
+}
+
 /* .carousel-caption {
     left: 10% !important;
 
 } */
+
+.single-work {
+    border-radius: 10px;
+    background-color: #e7f8ee;
+    padding: 30px;
+    overflow: hidden;
+    /* position: relative;
+    z-index: 1; */
+}
+
+.work-icon {
+    width: 65px;
+    height: 65px;
+    line-height: 60px;
+    text-align: center;
+    border: 1px solid rgba(52, 163, 95, 0.2);
+    border-radius: 10px;
+    background-color: #fff;
+    color: #309255;
+    display: inline-block;
+    font-size: 32px;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.single-work:hover .work-icon {
+    border-color: #309255;
+    background-color: #309255;
+    color: #fff;
+}
+
+.download-section {
+    background-color: #309255;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-section .app-shape-1 {
+    width: 560px;
+    height: 560px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    left: 70px;
+    bottom: 85px;
+    position: absolute;
+}
+
+.download-section .app-shape-2 {
+    width: 560px;
+    height: 560px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    left: 31%;
+    top: 60px;
+    position: absolute;
+}
+
+.download-section .shape-D {
+    position: absolute;
+    top: 40%;
+    left: 47%;
+}
+
+.animation-right {
+    animation: right 5s linear 0s infinite normal forwards;
+}
+
+.download-btn {
+    width: 180px;
+    height: 60px;
+    align-items: center;
+    display: inline-block;
+    background-color: #fff !important;
+    border-radius: 10px;
+}
