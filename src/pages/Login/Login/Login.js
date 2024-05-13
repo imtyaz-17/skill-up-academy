@@ -5,7 +5,7 @@ import shape1 from '../../../assets/images/shape-1.png';
 import './Login.css';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
 const Login = () => {
@@ -13,12 +13,16 @@ const Login = () => {
     const { signIn, setLoading, providerLogin } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
             .then(result => {
                 const user = result.user;
-                navigate('/');
+                navigate(from, { replace: true });
+
             })
             .catch(error => setError(error.message))
     }
@@ -39,7 +43,7 @@ const Login = () => {
                 form.reset();
                 setError('');
                 if (user.emailVerified) {
-                    navigate('/');
+                    navigate(from, { replace: true });
                 }
                 else {
                     toast.error('Your email is not verified. Please verify your email address.')
