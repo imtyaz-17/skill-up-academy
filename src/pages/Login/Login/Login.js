@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Col, Container, Form, FormControl, Image, InputGroup, Row } from 'react-bootstrap';
 import loginImg from '../../../assets/images/register-login.png';
 import shape1 from '../../../assets/images/shape-1.png';
 import './Login.css';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const [error, setError] = useState('');
+    const { providerLogin } = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
+    const navigate = useNavigate();
+
+    const handleGoogleSignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                navigate('/');
+            })
+            .catch(error => setError(error.message))
+    }
+
+
+
     return (
         <Container className='login-container p-4 border rounded mt-3'>
             <Row>
@@ -34,9 +53,11 @@ const Login = () => {
                             </div>
                             <div className="form-field">
                                 <Button variant="success" className="w-100 py-2 btn-hover-dark fs-5 fw-medium">Login</Button>
-                                <Button variant='outline-success' className="btn-outline w-100 mt-3 py-2 fs-5 fw-medium ">Login with Google</Button>
+                                <Button onClick={handleGoogleSignIn} variant='outline-success' className="btn-outline w-100 mt-3 py-2 fs-5 fw-medium ">Login with Google</Button>
                                 <Button variant='outline-dark' className="btn-outline w-100 mt-2 py-2 fs-5 fw-medium ">Login with GitHub</Button>
-                                <Form.Text className="text-danger"></Form.Text>
+                                <Form.Text className="text-danger">
+                                    {error}
+                                </Form.Text>
                             </div>
                         </Form>
                     </div>

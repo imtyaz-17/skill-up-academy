@@ -7,6 +7,7 @@ import TermsAndCondition from "../pages/Shared/TermsAndConditionTermsAndConditio
 import Courses from "../pages/Courses/Courses";
 import CourseDetails from "../pages/Courses/CourseDetails/CourseDetails";
 import CourseCategory from "../pages/CourseCategory/CourseCategory";
+import Profile from "../pages/Profile/Profile";
 
 export const routes = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/profile',
+                element: <Profile></Profile>
             },
             {
                 path: '/terms',
