@@ -15,10 +15,10 @@ const Header = () => {
             .catch(error => console.error())
     }
     return (
-        <Navbar collapseOnSelect expand="lg" className="fw-bold nav-bar sticky-lg-top">
+        <Navbar collapseOnSelect expand="lg" className="fw-bold nav-bar">
             <Container className='border border-success rounded-3 py-1 mt-1'>
-                <Navbar.Brand as={NavLink} to='/'>
-                    <Image src={logo} width={50} height={50} /> Skill Up - Academy
+                <Navbar.Brand as={NavLink} to='/' className='d-flex justify-content-center align-items-center'>
+                    <Image src={logo} width={50} height={50} /> <span>Skill Up - Academy</span>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" className='toggle-bar' />
                 <Navbar.Collapse id="responsive-navbar-nav">

@@ -9,11 +9,6 @@
     padding-right: 15px;
 }
 
-/* .carousel-caption {
-    left: 10% !important;
-
-} */
-
 .single-work {
     border-radius: 10px;
     background-color: #e7f8ee;
@@ -24,10 +19,7 @@
 }
 
 .work-icon {
-    width: 65px;
-    height: 65px;
-    line-height: 60px;
-    text-align: center;
+    padding: 10px;
     border: 1px solid rgba(52, 163, 95, 0.2);
     border-radius: 10px;
     background-color: #fff;

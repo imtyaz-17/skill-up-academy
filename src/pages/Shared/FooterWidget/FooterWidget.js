@@ -29,10 +29,10 @@ const FooterWidget = () => {
                                         <h6 className="text-success ">Banani, Dhaka-1206.</h6>
                                     </li>
                                     <li>
-                                        <h6><MdOutlineEmail className="text-success" /><a href="mailto:address@gmail.com"> address@skillup.com</a></h6>
+                                        <h6><MdOutlineEmail className="text-success d-inline-block" /><a href="mailto:address@gmail.com"> address@skillup.com</a></h6>
                                     </li>
                                     <li>
-                                        <h6><MdOutlineCall className="text-success" /><a href="tel:9702621413"> (+880) 1262-141334</a></h6>
+                                        <h6><MdOutlineCall className="text-success d-inline-block" /><a href="tel:9702621413"> (+880) 1262-141334</a></h6>
                                     </li>
                                 </ul>
                                 <ul className="d-flex social-icons p-0">
