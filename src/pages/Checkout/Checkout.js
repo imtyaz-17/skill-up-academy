@@ -3,16 +3,15 @@ import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import toast from 'react-hot-toast';
-import { useLocation } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import './Checkout.css';
+import CourseDetails from '../Courses/CourseDetails/CourseDetails';
 
 const Checkout = () => {
     const [isRadioSelected, setIsRadioSelected] = useState(false);
     const [show, setShow] = useState(false);
+    const courseDetail = useLoaderData();
     // const { name, price } = useContext(CourseContext);
-    const location = useLocation();
-    const { name, price } = location.state.orderCourse;
-    // console.log('cc', orderCourse);
     useEffect(() => {
         setShow(true);
     }, []);
@@ -31,7 +30,7 @@ const Checkout = () => {
     };
 
     return (
-        <div style={{ backgroundColor: '#red' }}>
+        <div>
             <Modal show={show} onHide={handleClose} size="md" aria-labelledby="contained-modal-title-vcenter" centered>
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter" className="text-success">
@@ -40,10 +39,10 @@ const Checkout = () => {
                 </Modal.Header>
                 <Modal.Body className="checkout-list mx-3">
                     <ul>
-                        <li>Course Name: <span>{name}</span></li>
-                        <li>Price: <span>${price}</span></li>
+                        <li>Course Name: <span>{courseDetail?.name}</span></li>
+                        <li>Price: <span>${courseDetail?.price}</span></li>
                         <li>Tax: <span>$0.00</span></li>
-                        <li>Total Amount: <span>${price}</span></li>
+                        <li>Total Amount: <span>${courseDetail?.price}</span></li>
                     </ul>
                     <p className='fw-medium'>Payment Option:</p>
                     <Form.Check
@@ -57,6 +56,7 @@ const Checkout = () => {
                     <Button variant="primary" disabled={!isRadioSelected} onClick={handlePlaceOrder}>Place Order</Button>
                 </Modal.Footer>
             </Modal>
+            <CourseDetails></CourseDetails>
         </div>
 
     );
