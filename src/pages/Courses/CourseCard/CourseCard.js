@@ -1,11 +1,11 @@
 import React from 'react';
 // import { Image } from 'react-bootstrap';
 
+import { Avatar, Card, CardBody, CardFooter, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import { FaStar, FaUserGraduate } from 'react-icons/fa';
 import { GiDuration } from 'react-icons/gi';
-import './CourseCard.css'
 import { Link } from 'react-router-dom';
-import { Card, CardHeader, CardBody, CardFooter, Flex, Avatar, Box, Heading, Text, IconButton, Button, SimpleGrid, Image, AspectRatio } from '@chakra-ui/react';
+import './CourseCard.css';
 const CourseCard = ({ course }) => {
     const { id, name, img, description, instructor, enrolled, duration, ratings } = course;
 

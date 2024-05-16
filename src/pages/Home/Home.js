@@ -18,7 +18,6 @@ const Home = () => {
 
     return (
         <>
-
             <div style={{ backgroundColor: '#eefbf3' }}>
                 <Carousel fade>
                     <Carousel.Item>

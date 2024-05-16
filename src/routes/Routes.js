@@ -9,6 +9,7 @@ import CourseDetails from "../pages/Courses/CourseDetails/CourseDetails";
 import CourseCategory from "../pages/CourseCategory/CourseCategory";
 import Profile from "../pages/Profile/Profile";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import Checkout from "../pages/Checkout/Checkout";
 
 export const routes = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/profile',
                 element: <PrivateRoute><Profile></Profile></PrivateRoute>
+            },
+            {
+                path: '/checkout',
+                element: <PrivateRoute><Checkout></Checkout></PrivateRoute>
             },
             {
                 path: '/terms',
