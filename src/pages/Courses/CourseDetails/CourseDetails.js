@@ -1,7 +1,7 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import { Button, Col, Container, Image, Row } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-import { FaChalkboardTeacher, FaLanguage, FaRegClock, FaStar } from 'react-icons/fa';
+import { FaChalkboardTeacher, FaFilePdf, FaLanguage, FaRegClock, FaStar } from 'react-icons/fa';
 import { MdVideoLibrary } from 'react-icons/md';
 import { RxDividerVertical } from 'react-icons/rx';
 import { SiLevelsdotfyi } from "react-icons/si";
@@ -9,11 +9,11 @@ import { Link, useLoaderData } from 'react-router-dom';
 import DownloadApp from '../../Shared/DownloadApp/DownloadApp';
 import FooterCopyright from '../../Shared/FooterWidget/FooterCopyright/FooterCopyright';
 import SideBar from '../SideBar/SideBar';
-
+import { usePDF } from 'react-to-pdf';
+import './CourseDetails.css'
 const CourseDetails = () => {
     const course = useLoaderData();
     const { id, name, img, description, curriculum, certificate, instructor, level, lectures, language, enrolled, price, duration, ratings } = course;
-    const orderCourse = { name, price };
     // console.log('bbb', orderCourse);
     const StarRating = ({ ratings }) => {
         const numStars = parseInt(ratings);
@@ -22,6 +22,8 @@ const CourseDetails = () => {
         ));
         return <>{starsArray}</>;
     };
+
+    const { toPDF, targetRef } = usePDF({ filename: 'CourseDetails.pdf' });
     return (
         <>
             <Container className='mb-3'>
@@ -30,12 +32,16 @@ const CourseDetails = () => {
                         <SideBar />
                     </Col>
                     <Col lg={9}>
-                        <Card className="mt-3 shadow">
+                        <Card className="mt-3 shadow" ref={targetRef}>
+                            <Card.Header className='d-flex justify-content-between align-items-center'><Card.Title className="fs-1 fw-bold">{name}</Card.Title>
+                                <FaFilePdf className='text-info fs-2 pdf-icon' onClick={() => toPDF()} />
+                            </Card.Header>
+                            {/* <Card.Title className="fs-1 fw-bold">{name}</Card.Title> */}
                             <Card.Img variant="top" src={img} style={{ height: '50vh' }} />
                             <Card.Body>
                                 <Row>
                                     <Col lg={8} >
-                                        <Card.Title className="fs-1 fw-bold">{name}</Card.Title>
+                                        {/* <Card.Title className="fs-1 fw-bold">{name}</Card.Title> */}
                                         <div className="d-flex justify-content-between  align-items-center mt-3">
                                             <Image roundedCircle className="mb-0 " src={instructor?.instImg} style={{ height: '10vh' }} />
                                             <h3>{instructor?.instname}</h3>
