@@ -4,20 +4,22 @@ import loginImg from '../../../assets/images/register-login.png';
 import shape1 from '../../../assets/images/shape-1.png';
 import './Login.css';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
 const Login = () => {
     const [error, setError] = useState('');
-    const { signIn, setLoading, providerLogin } = useContext(AuthContext);
+    const { signIn, setLoading, loginWithPopUp } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
+    const gitHubProvider = new GithubAuthProvider();
+
     const navigate = useNavigate();
     const location = useLocation();
 
     const from = location.state?.from?.pathname || '/';
     const handleGoogleSignIn = () => {
-        providerLogin(googleProvider)
+        loginWithPopUp(googleProvider)
             .then(result => {
                 const user = result.user;
                 navigate(from, { replace: true });
@@ -25,7 +27,15 @@ const Login = () => {
             })
             .catch(error => setError(error.message))
     }
-
+    const handleGitHubSignIn = () => {
+        loginWithPopUp(gitHubProvider)
+            .then(result => {
+                const user = result.user;
+                console.log('git', user);
+                navigate(from, { replace: true });
+            })
+            .catch(error => setError(error.message))
+    }
     const handleSignInSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -94,7 +104,7 @@ const Login = () => {
 
                                 <Button variant="success" className="w-100 py-2 btn-hover-dark fs-5 fw-medium" type='submit'>Login</Button>
                                 <Button onClick={handleGoogleSignIn} variant='outline-success' className="btn-outline w-100 mt-3 py-2 fs-5 fw-medium ">Login with Google</Button>
-                                <Button variant='outline-dark' className="btn-outline w-100 mt-2 py-2 fs-5 fw-medium ">Login with GitHub</Button>
+                                <Button onClick={handleGitHubSignIn} variant='outline-dark' className="btn-outline w-100 mt-2 py-2 fs-5 fw-medium ">Login with GitHub</Button>
 
                             </div>
                         </Form>

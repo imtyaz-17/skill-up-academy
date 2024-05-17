@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithRedirect } from 'firebase/auth';
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -18,7 +19,9 @@ const Register = () => {
     });
     const [errors, setErrors] = useState({});
     const [error, setError] = useState('');
-    const { createUser, updateUserProfile, verifyEmail } = useContext(AuthContext);
+    const { createUser, updateUserProfile, verifyEmail, loginWithPopUp } = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
+    const gitHubProvider = new GithubAuthProvider();
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -94,7 +97,24 @@ const Register = () => {
         verifyEmail()
             .catch(error => setError(error.message));
     };
+    const handleGoogleSignIn = () => {
+        loginWithPopUp(googleProvider)
+            .then(result => {
+                const user = result.user;
+                navigate('/');
 
+            })
+            .catch(error => setError(error.message))
+    }
+    const handleGitHubSignIn = () => {
+        loginWithPopUp(gitHubProvider)
+            .then(result => {
+                const user = result.user;
+                console.log('git', user);
+                navigate('/');
+            })
+            .catch(error => setError(error.message))
+    }
     return (
         <Container className='login-container p-4 border rounded mt-3'>
             <Row>
@@ -114,31 +134,31 @@ const Register = () => {
                         <Form onSubmit={handleSubmit}>
                             <div className="mt-4">
                                 <InputGroup>
-                                    <FormControl className='py-2 px-3 fs-5' type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} />
+                                    <FormControl className='py-1 px-3 fs-5' type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} />
                                 </InputGroup>
                                 {errors.name && <Form.Text className="text-danger">{errors.name}</Form.Text>}
                             </div>
                             <div className="mt-3">
                                 <InputGroup>
-                                    <FormControl className='py-2 px-3 fs-5' name="photoURL" type="text" placeholder="Photo URL" value={formData.photoURL} onChange={handleChange} />
+                                    <FormControl className='py-1 px-3 fs-5' name="photoURL" type="text" placeholder="Photo URL" value={formData.photoURL} onChange={handleChange} />
                                 </InputGroup>
                                 {errors.photoURL && <Form.Text className="text-danger">{errors.photoURL}</Form.Text>}
                             </div>
                             <div className="mt-3">
                                 <InputGroup>
-                                    <FormControl className='py-2 px-3 fs-5' name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} />
+                                    <FormControl className='py-1 px-3 fs-5' name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} />
                                 </InputGroup>
                                 {errors.email && <Form.Text className="text-danger">{errors.email}</Form.Text>}
                             </div>
                             <div className="mt-3">
                                 <InputGroup>
-                                    <FormControl className='py-2 px-3 fs-5' name="password" type="password" placeholder="Password" value={formData.password} onChange={handleChange} />
+                                    <FormControl className='py-1 px-3 fs-5' name="password" type="password" placeholder="Password" value={formData.password} onChange={handleChange} />
                                 </InputGroup>
                                 {errors.password && <Form.Text className="text-danger">{errors.password}</Form.Text>}
                             </div>
                             <div className="mt-3">
                                 <InputGroup>
-                                    <FormControl className='py-2 px-3 fs-5' name="confirm" type="password" placeholder="Confirm Password" value={formData.confirm} onChange={handleChange} />
+                                    <FormControl className='py-1 px-3 fs-5' name="confirm" type="password" placeholder="Confirm Password" value={formData.confirm} onChange={handleChange} />
                                 </InputGroup>
                                 {errors.confirm && <Form.Text className="text-danger">{errors.confirm}</Form.Text>}
                             </div>
@@ -150,14 +170,20 @@ const Register = () => {
                                 {errors.accepted && <Form.Text className="text-danger">{errors.accepted}</Form.Text>}
                             </Form.Group>
                             <div className="form-field">
-                                <Button variant="success" type='submit' className="w-100 py-2 btn-hover-dark fs-5 fw-medium">Create an account</Button>
+                                <Button variant="success" type='submit' className="w-100 py-1 btn-hover-dark fs-5 fw-medium">Create an account</Button>
                                 <span className='fs-5 fw-medium'>or,</span>
-                                <Button variant='outline-success' className="btn-outline w-100 mt-3 py-2 fs-5 fw-medium ">Sign up with Google</Button>
-                                <Button variant='outline-dark' className="btn-outline w-100 mt-2 py-2 fs-5 fw-medium ">Sign up with GitHub</Button>
+                                <div className="mt-1 text-sm form-field">
+                                    Already have an account ?
+                                    <Link to="/login" className="ms-2 text-primary">Click to login
+                                    </Link>
+                                </div>
+                                <Button onClick={handleGoogleSignIn} variant='outline-success' className="btn-outline w-100 mt-3 py-1 fs-5 fw-medium ">Sign up with Google</Button>
+                                <Button onClick={handleGitHubSignIn} variant='outline-dark' className="btn-outline w-100 mt-2 py-1 fs-5 fw-medium ">Sign up with GitHub</Button>
                                 <Form.Text className="text-danger">
                                     {error}
                                 </Form.Text>
                             </div>
+
                         </Form>
                     </div>
                 </Col>
