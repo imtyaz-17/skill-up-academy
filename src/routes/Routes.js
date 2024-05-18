@@ -11,6 +11,7 @@ import Profile from "../pages/Profile/Profile";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Checkout from "../pages/Checkout/Checkout";
 import FAQ from "../pages/FAQ/FAQ";
+import Blog from "../pages/Blog/Blog";
 
 export const routes = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/faq',
                 element: <FAQ></FAQ>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             },
             {
                 path: '/login',

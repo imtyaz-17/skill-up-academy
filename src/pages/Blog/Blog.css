@@ -1,0 +1,7 @@
+.blog-wrapper:hover {
+    background-color: #eefbf3;
+}
+
+.theme-wrapper.dark-mode .blog-wrapper:hover {
+    background-color: black;
+}
