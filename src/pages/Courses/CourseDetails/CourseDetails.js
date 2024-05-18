@@ -32,7 +32,7 @@ const CourseDetails = () => {
                         <SideBar />
                     </Col>
                     <Col lg={9}>
-                        <Card className="mt-3 shadow" ref={targetRef}>
+                        <Card className="mt-3 shadow details-dark" ref={targetRef}>
                             <Card.Header className='d-flex justify-content-between align-items-center'><Card.Title className="fs-1 fw-bold">{name}</Card.Title>
                                 <FaFilePdf className='text-info fs-2 pdf-icon' onClick={() => toPDF()} />
                             </Card.Header>

@@ -1,12 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { Button, Col, Container, Form, FormControl, Image, InputGroup, Row } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 import loginImg from '../../../assets/images/register-login.png';
 import shape1 from '../../../assets/images/shape-1.png';
-import { Link, useNavigate } from 'react-router-dom';
-
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithRedirect } from 'firebase/auth';
 
 const Register = () => {
     const [formData, setFormData] = useState({

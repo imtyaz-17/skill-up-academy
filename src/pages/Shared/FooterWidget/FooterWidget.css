@@ -8,6 +8,19 @@ a:hover {
     /* font-weight: bold; */
 }
 
+.theme-wrapper.dark-mode .footer-dark {
+    background-color: gray !important;
+    color: white !important;
+}
+
+.theme-wrapper.dark-mode .footer-dark a {
+    color: white !important;
+}
+
+.theme-wrapper.dark-mode .footer-dark .text-success {
+    color: white !important;
+}
+
 ul {
     list-style: none;
 }
@@ -27,6 +40,10 @@ ul {
 .footer-ul ul li {
     padding: 5px;
     margin-top: 5px;
+}
+
+.theme-wrapper.dark-mode .footer-ul ul li a {
+    color: white !important;
 }
 
 .social-icons li {

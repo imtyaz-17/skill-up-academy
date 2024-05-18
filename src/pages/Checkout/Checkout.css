@@ -1,5 +1,3 @@
-/* CheckoutModal.css */
-
 .checkout-list ul li {
     display: flex;
     justify-content: space-between;
@@ -7,4 +5,9 @@
     border-bottom: 1px solid #a8a8a8;
     padding: 5px 0px;
     font-weight: 500;
+}
+
+.theme-wrapper.dark-mode .modal-content {
+    background-color: black !important;
+    color: white !important;
 }

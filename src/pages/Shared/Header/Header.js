@@ -1,22 +1,23 @@
+import { Switch } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 import { Container, Image, Nav, Navbar, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { FaUserLarge } from "react-icons/fa6";
+import { AiFillSun, AiFillMoon } from "react-icons/ai";
 import { NavLink } from 'react-router-dom';
 import logo from '../../../assets/images/logo.png';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import './Header.css';
 
-
-const Header = () => {
+const Header = ({ toggleTheme, isDarkMode }) => {
     const { user, logOut } = useContext(AuthContext);
-    console.log('h', user);
+
     const handleLogOut = () => {
         logOut()
             .then(() => { })
             .catch(error => console.error())
     }
     return (
-        <Navbar collapseOnSelect expand="lg" className="fw-bold nav-bar">
+        <Navbar collapseOnSelect expand="lg" className={`fw-bold nav-bar ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
             <Container className='border border-success rounded-3 py-1 mt-1'>
                 <Navbar.Brand as={NavLink} to='/' className='d-flex justify-content-center align-items-center'>
                     <Image src={logo} width={50} height={50} /> <span>Skill Up - Academy</span>
@@ -59,8 +60,16 @@ const Header = () => {
                                 <NavLink to='/login' className='nav-link nav-btn border rounded px-3 py-2 bg-white'>Sign In</NavLink>
                                 <NavLink to='/register' className='nav-link nav-btn border rounded px-3 py-2 bg-white'>Sign Up</NavLink>
                             </Nav>
+
                     }
                 </Navbar.Collapse>
+                <Nav className='ms-2'>
+                    <Switch colorScheme='gray' size='lg' isChecked={isDarkMode} onChange={toggleTheme}
+                    />
+                    <span>{isDarkMode ? <AiFillMoon className='ms-1 fs-3' /> : <AiFillSun className='text-warning fs-3 ms-1' />}
+                    </span>
+
+                </Nav>
             </Container>
         </Navbar>
     );

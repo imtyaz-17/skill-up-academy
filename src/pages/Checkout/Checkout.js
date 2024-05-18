@@ -15,7 +15,11 @@ const Checkout = () => {
     useEffect(() => {
         setShow(true);
     }, []);
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false);
+        window.history.back();
+    }
+
     const handleRadioChange = () => {
         setIsRadioSelected(!isRadioSelected);
     };
@@ -31,7 +35,7 @@ const Checkout = () => {
 
     return (
         <div>
-            <Modal show={show} onHide={handleClose} size="md" aria-labelledby="contained-modal-title-vcenter" centered>
+            <Modal show={show} onHide={handleClose} size="md" aria-labelledby="contained-modal-title-vcenter" centered >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter" className="text-success">
                         Checkout

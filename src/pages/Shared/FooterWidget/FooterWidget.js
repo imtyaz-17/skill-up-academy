@@ -12,7 +12,7 @@ import { FaInstagram, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
 const FooterWidget = () => {
     return (
         <footer>
-            <div className="py-2" style={{ backgroundColor: '#e7f8ee' }}>
+            <div className="py-2 footer-dark" style={{ backgroundColor: '#e7f8ee' }}>
                 <Container>
                     <Row>
                         <Col lg={3} md={6}>

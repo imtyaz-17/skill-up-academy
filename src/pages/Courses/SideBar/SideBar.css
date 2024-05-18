@@ -3,6 +3,10 @@
     text-decoration: none;
 }
 
+.theme-wrapper.dark-mode .side-bar {
+    background-color: black;
+}
+
 .side-btn:hover {
     color: #fff !important;
 }

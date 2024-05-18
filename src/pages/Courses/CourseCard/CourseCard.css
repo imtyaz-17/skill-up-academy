@@ -4,3 +4,12 @@
     transition: transform 0.2s ease-in-out;
     cursor: pointer;
 }
+
+.theme-wrapper.dark-mode .course-card {
+    background-color: black !important;
+    color: white !important;
+}
+
+.theme-wrapper.dark-mode .course-card:hover {
+    border: 1px solid #fff;
+}

@@ -11,8 +11,8 @@ const PopularCourses = ({ courses }) => {
                 <h2 className="my-4"> <span className=" text-success">Popular
                 </span> Courses</h2>
                 {popularCourses.map(course => (
-                    <Col lg={3} md={4} sm={12}>
-                        <CourseCard key={course.id} course={course}></CourseCard>
+                    <Col key={course.id} lg={3} md={4} sm={12}>
+                        <CourseCard course={course}></CourseCard>
                     </Col>
                 ))}
                 <Link to="/courses">
