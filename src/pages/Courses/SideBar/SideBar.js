@@ -6,7 +6,7 @@ const SideBar = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/course-categories')
+        fetch('https://skill-up-academy-server.vercel.app/course-categories')
             .then(resp => resp.json())
             .then(data => setCategories(data))
     }, [])

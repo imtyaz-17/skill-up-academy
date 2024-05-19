@@ -22,22 +22,22 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                loader: () => fetch('http://localhost:5000/courses'),
+                loader: () => fetch('https://skill-up-academy-server.vercel.app/courses'),
                 element: <Home></Home>
             },
             {
                 path: '/category/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`),
+                loader: ({ params }) => fetch(`https://skill-up-academy-server.vercel.app/category/${params.id}`),
                 element: <CourseCategory></CourseCategory>
             },
             {
                 path: '/courses',
-                loader: () => fetch('http://localhost:5000/courses'),
+                loader: () => fetch('https://skill-up-academy-server.vercel.app/courses'),
                 element: <Courses></Courses>
             },
             {
                 path: '/course/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`),
+                loader: ({ params }) => fetch(`https://skill-up-academy-server.vercel.app/course/${params.id}`),
                 element: <CourseDetails></CourseDetails>
             },
             {
@@ -62,7 +62,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/checkout/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`),
+                loader: ({ params }) => fetch(`https://skill-up-academy-server.vercel.app/course/${params.id}`),
                 element: <PrivateRoute><Checkout></Checkout></PrivateRoute>
             },
             {
