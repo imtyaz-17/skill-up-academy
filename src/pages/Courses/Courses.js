@@ -4,8 +4,10 @@ import { useLoaderData } from 'react-router-dom';
 import CourseCard from './CourseCard/CourseCard';
 import SideBar from './SideBar/SideBar';
 import FooterCopyright from '../Shared/FooterWidget/FooterCopyright/FooterCopyright';
+import useTitle from '../../hooks/useTitle';
 const Courses = () => {
     const courses = useLoaderData();
+    useTitle('Courses');
     return (
         <>
             <Container>

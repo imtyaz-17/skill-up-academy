@@ -11,9 +11,12 @@ import FooterCopyright from '../../Shared/FooterWidget/FooterCopyright/FooterCop
 import SideBar from '../SideBar/SideBar';
 import { usePDF } from 'react-to-pdf';
 import './CourseDetails.css'
+import useTitle from '../../../hooks/useTitle';
 const CourseDetails = () => {
     const course = useLoaderData();
     const { id, name, img, description, curriculum, certificate, instructor, level, lectures, language, enrolled, price, duration, ratings } = course;
+
+    useTitle('Course Info');
     // console.log('bbb', orderCourse);
     const StarRating = ({ ratings }) => {
         const numStars = parseInt(ratings);

@@ -6,6 +6,7 @@ import shape1 from '../../../assets/images/shape-1.png';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -22,7 +23,7 @@ const Register = () => {
     const googleProvider = new GoogleAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
     const navigate = useNavigate();
-
+    useTitle('Register');
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({

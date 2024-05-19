@@ -6,12 +6,14 @@ import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import './Checkout.css';
 import CourseDetails from '../Courses/CourseDetails/CourseDetails';
+import useTitle from '../../hooks/useTitle';
 
 const Checkout = () => {
     const [isRadioSelected, setIsRadioSelected] = useState(false);
     const [show, setShow] = useState(false);
     const courseDetail = useLoaderData();
-    // const { name, price } = useContext(CourseContext);
+
+    useTitle('Checkout');
     useEffect(() => {
         setShow(true);
     }, []);

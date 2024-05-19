@@ -2,13 +2,14 @@ import React, { useContext, useRef, useState } from 'react';
 import { Button, Col, Container, Form, FormControl, Image, Row } from 'react-bootstrap';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
+import useTitle from '../../hooks/useTitle';
 
 const Profile = () => {
     const { user, updateUserProfile } = useContext(AuthContext);
     const [name, setName] = useState(user.displayName);
     const photoURLRef = useRef(user.photoURL);
     const [errors, setErrors] = useState({});
-
+    useTitle('Profile');
     const handleSubmit = event => {
         event.preventDefault();
         if (!name) {

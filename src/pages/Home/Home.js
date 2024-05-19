@@ -13,9 +13,11 @@ import { ImSearch } from "react-icons/im";
 import { PiCertificate } from "react-icons/pi";
 import DownloadApp from '../Shared/DownloadApp/DownloadApp';
 import FooterWidget from '../Shared/FooterWidget/FooterWidget';
+import useTitle from '../../hooks/useTitle';
 const Home = () => {
     const courses = useLoaderData();
     console.log("courses", courses);
+    useTitle('Home');
     return (
         <>
             <div style={{ backgroundColor: '#eefbf3' }} className='home-bg'>

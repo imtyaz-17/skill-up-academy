@@ -3,8 +3,10 @@ import { Accordion, Container } from 'react-bootstrap';
 import DownloadApp from '../Shared/DownloadApp/DownloadApp';
 import FooterWidget from '../Shared/FooterWidget/FooterWidget';
 import './FAQ.css';
+import useTitle from '../../hooks/useTitle';
 
 const FAQ = () => {
+    useTitle('FAQs');
     const questions = [
         {
             id: 1,

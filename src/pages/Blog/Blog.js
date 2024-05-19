@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import './Blog.css'
 import DownloadApp from '../Shared/DownloadApp/DownloadApp';
 import FooterWidget from '../Shared/FooterWidget/FooterWidget';
+import useTitle from '../../hooks/useTitle';
 const Blog = () => {
+    useTitle('Blogs');
     const posts = [
         {
             id: 1,

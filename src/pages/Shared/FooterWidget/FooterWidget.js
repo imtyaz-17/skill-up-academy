@@ -51,12 +51,12 @@ const FooterWidget = () => {
                                 <div className="w-50 footer-ul">
                                     <h4 className="mb-3">Category</h4>
                                     <ul className="p-0">
-                                        <li><Link to='/courses'>Creative Writing</Link></li>
-                                        <li><Link to='/courses'>Film & Video</Link></li>
+                                        <li><Link to='/courses'>Web Development</Link></li>
+                                        <li><Link to='/courses'>App Development</Link></li>
                                         <li><Link to='/courses'>Graphic Design</Link></li>
                                         <li><Link to='/courses'>UI/UX Design</Link></li>
                                         <li><Link to='/courses'>Business Analytics</Link></li>
-                                        <li><Link to='/courses'>Marketing</Link></li>
+                                        <li><Link to='/courses'>IELTS</Link></li>
                                     </ul>
                                 </div>
                                 <div className="footer-ul w-50">
