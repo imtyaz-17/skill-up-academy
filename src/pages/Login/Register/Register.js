@@ -116,7 +116,7 @@ const Register = () => {
             .catch(error => setError(error.message))
     }
     return (
-        <Container className='login-container p-4 border rounded mt-3'>
+        <Container className='p-4 border rounded mt-3'>
             <Row>
                 <Col lg={6} sm={12}>
                     <div className='login-images p-3 mt-2 text-center border rounded-2 position-relative z-1'>
@@ -129,8 +129,8 @@ const Register = () => {
                     </div>
                 </Col>
                 <Col lg={6} sm={12}>
-                    <div className='login-form mx-auto w-75'>
-                        <h3 className="login-title fs-1 fw-bold">Registration <span className='text-success'>Now</span></h3>
+                    <div className='mx-auto w-75'>
+                        <h3 className="mt-2 fs-1 fw-bold">Registration <span className='text-success'>Now</span></h3>
                         <Form onSubmit={handleSubmit}>
                             <div className="mt-4">
                                 <InputGroup>

@@ -36,9 +36,9 @@ const Profile = () => {
     };
 
     return (
-        <Container className="p-4 border rounded mt-3">
+        <Container className="p-4 border rounded mt-3" style={{ backgroundColor: '#eefbf3' }}>
             <Row>
-                <h2 className="fw-bold text-center">Profile</h2>
+                <h2 className="fw-bold text-center text-success">Profile</h2>
                 <Col lg={4} sm={12} className="d-flex justify-content-center align-items-center">
                     <Image src={user.photoURL} fluid className="shadow" />
                 </Col>

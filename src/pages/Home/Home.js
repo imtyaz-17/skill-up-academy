@@ -24,53 +24,49 @@ const Home = () => {
                 <Carousel fade>
                     <Carousel.Item>
                         <div className="carousel-item-overlay"></div>
-                        <img src={sliderImg1} className="d-block w-100" style={{ height: '85vh' }} alt='' />
-                        <Carousel.Caption className='text-black text-start w-25  flex-column carousel-dark'>
+                        <img src={sliderImg1} className="d-block w-100" alt='' />
+                        <Carousel.Caption className='text-black text-start flex-column carousel-dark'>
                             <h5 className='text-success'>Start your favorite course</h5>
-                            <h1 className='fw-bold my-3 '>Learn from anywhere and upgrade your skills with  <span className='text-success'>Skill Up Academy.</span></h1>
+                            <h1 className='fw-lg-bold my-2 my-lg-3 '>Learn from anywhere and upgrade your skills with  <span className='text-success'>Skill Up Academy.</span></h1>
                             <span className='my-2'>Our legacy withstands not only five centuries, but also the leap into electronic typesetting.</span>
                             <Link to="/courses">
-                                <Button variant="success" className="btn-hover-dark w-50 p-2 my-3">Start A Course</Button>
+                                <Button variant="success" className="btn-hover-dark w-lg-50 p-2 my-3">Start A Course</Button>
                             </Link>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <div className="carousel-item-overlay"></div>
-                        <img src={sliderImg2} className="d-block w-100" style={{ height: '85vh' }} alt='' />
-                        <Carousel.Caption className='text-black text-start w-25 flex-column carousel-dark'>
+                        <img src={sliderImg2} className="d-block w-100" alt='' />
+                        <Carousel.Caption className='text-black text-start flex-column carousel-dark'>
                             <h5 className='text-success'>Start your favorite course</h5>
-                            <h1 className='fw-bold my-3 '>Learn from anywhere and upgrade your skills with  <span className='text-success '>Skill Up Academy.</span></h1>
+                            <h1 className='fw-lg-bold my-2 my-lg-3 '>Learn from anywhere and upgrade your skills with  <span className='text-success '>Skill Up Academy.</span></h1>
                             <span className='my-2'>Our legacy withstands not only five centuries, but also the leap into electronic typesetting.</span>
-                            <Button variant="success" className="btn-hover-dark w-50 p-2 my-3">Start A Course</Button>
+                            <Button variant="success" className="btn-hover-dark w-lg-50 p-2 my-3">Start A Course</Button>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <div className="carousel-item-overlay"></div>
-                        <img src={sliderImg1} className="d-block w-100" style={{ height: '85vh' }} alt='' />
-                        <Carousel.Caption className='text-black text-start w-25 flex-column carousel-dark'>
+                        <img src={sliderImg1} className="d-block w-100" alt='' />
+                        <Carousel.Caption className='text-black text-start flex-column carousel-dark'>
                             <h5 className='text-success'>Start your favorite course</h5>
-                            <h1 className='fw-bold my-3 '>Learn from anywhere and upgrade your skills with  <span className='text-success '>Skill Up Academy.</span></h1>
+                            <h1 className='fw-lg-bold my-2 my-lg-3 '>Learn from anywhere and upgrade your skills with  <span className='text-success '>Skill Up Academy.</span></h1>
                             <span className='my-2'>Our legacy withstands not only five centuries, but also the leap into electronic typesetting.</span>
-                            <Button variant="success" className="btn-hover-dark w-50 p-2 my-3">Start A Course</Button>
+                            <Button variant="success" className="btn-hover-dark w-lg-50 p-2 my-3">Start A Course</Button>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
                 <PopularCourses courses={courses}></PopularCourses>
             </div >
             <Container>
-
-                {/* Section Title */}
-                <div className="section-title text-center">
+                <div className="mt-4 text-center">
                     <h5 className="text-success ">Over 500+ Course</h5>
                     <h2 >How It <span className="text-success"> Works?</span></h2>
                 </div>
-                {/* Section Title End */}
 
                 {/* How it Work */}
                 <Row className='pt-3 d-flex justify-content-center align-items-center'>
                     {/* Single Work 1*/}
                     <Col lg={3} className="single-work px-4">
-                        {/* <img className="shape-1" src="assets/images/shape/shape-15.png" alt="Shape" /> */}
                         <div className="work-icon">
                             <ImSearch />
                         </div>
@@ -81,12 +77,11 @@ const Home = () => {
                     </Col>
 
                     {/* Arrow 1 */}
-                    <Col lg={1} className="mt-3 ms-1">
+                    <Col lg={1} className="mt-3 ms-1 d-none d-lg-block">
                         <FaArrowRightLong className='text-success fs-1 fw-bold ' />
                     </Col>
                     {/* Single Work 2*/}
                     <Col lg={3} className="single-work px-4">
-                        {/* <img className="shape-1" src="assets/images/shape/shape-15.png" alt="Shape" /> */}
                         <div className="work-icon">
                             <FaWpforms />
                         </div>
@@ -96,12 +91,11 @@ const Home = () => {
                         </div>
                     </Col>
                     {/* Arrow 2 */}
-                    <Col lg={1} className="mt-3 ms-1">
+                    <Col lg={1} className="mt-3 ms-1 d-none d-lg-block">
                         <FaArrowRightLong className='text-success fs-1 fw-bold ' />
                     </Col>
                     {/* Single Work 3 */}
                     <Col lg={3} className="single-work px-4">
-                        {/* <img className="shape-1" src="assets/images/shape/shape-15.png" alt="Shape" /> */}
                         <div className="work-icon">
                             <PiCertificate />
                         </div>

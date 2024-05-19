@@ -20,15 +20,20 @@
     color: #fff !important;
 }
 
+.carousel-item img {
+    height: 85vh;
+}
+
+.carousel-caption {
+    width: 25%;
+}
+
+
+
 .carousel-indicators [data-bs-target] {
     width: 10px !important;
     height: 10px !important;
     border-radius: 100% !important;
-}
-
-.section-title {
-    margin-top: 25px;
-    padding-right: 15px;
 }
 
 .single-work {
@@ -36,8 +41,6 @@
     background-color: #e7f8ee;
     padding: 30px;
     overflow: hidden;
-    /* position: relative;
-    z-index: 1; */
 }
 
 .theme-wrapper.dark-mode .single-work {
@@ -110,4 +113,35 @@
     display: inline-block;
     background-color: #fff !important;
     border-radius: 10px;
+}
+
+/* Media query for small screens (mobile) */
+@media (max-width: 767px) {
+    .carousel-caption {
+        width: 40%;
+    }
+
+    .carousel-caption h1 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-caption h5 {
+        font-size: 1rem;
+    }
+
+    .carousel-caption span {
+        font-size: 0.9rem;
+    }
+
+    .carousel-caption .btn {
+        width: 80%;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .carousel-item img {
+        height: 50vh;
+    }
+
+
 }

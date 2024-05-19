@@ -34,7 +34,6 @@ ul {
 
 .widget-logo img {
     width: 100%;
-    /* overflow: hidden; */
 }
 
 .footer-ul ul li {
@@ -48,4 +47,8 @@ ul {
 
 .social-icons li {
     padding: 0px 10px;
+}
+
+.theme-wrapper.dark-mode .social-icons li {
+    color: white !important;
 }

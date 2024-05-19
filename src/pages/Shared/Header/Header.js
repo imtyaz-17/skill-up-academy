@@ -18,7 +18,7 @@ const Header = ({ toggleTheme, isDarkMode }) => {
     }
     return (
         <Navbar collapseOnSelect expand="lg" className={`fw-bold nav-bar ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
-            <Container className='border border-success rounded-3 py-1 mt-1'>
+            <Container className='border border-success rounded-2 py-1'>
                 <Navbar.Brand as={NavLink} to='/' className='d-flex justify-content-center align-items-center'>
                     <Image src={logo} width={50} height={50} /> <span>Skill Up - Academy</span>
                 </Navbar.Brand>
@@ -63,12 +63,11 @@ const Header = ({ toggleTheme, isDarkMode }) => {
 
                     }
                 </Navbar.Collapse>
-                <Nav className='ms-2'>
-                    <Switch colorScheme='gray' size='lg' isChecked={isDarkMode} onChange={toggleTheme}
+                <Nav className='ms-lg-2 align-items-center d-flex flex-row'>
+                    <Switch colorScheme='gray' size='md' isChecked={isDarkMode} onChange={toggleTheme}
                     />
-                    <span>{isDarkMode ? <AiFillMoon className='ms-1 fs-3' /> : <AiFillSun className='text-warning fs-3 ms-1' />}
+                    <span>{isDarkMode ? <AiFillMoon className='ms-1 fs-3 ' /> : <AiFillSun className='text-warning fs-3 ms-1' />}
                     </span>
-
                 </Nav>
             </Container>
         </Navbar>

@@ -17,7 +17,6 @@ const CourseDetails = () => {
     const { id, name, img, description, curriculum, certificate, instructor, level, lectures, language, enrolled, price, duration, ratings } = course;
 
     useTitle('Course Info');
-    // console.log('bbb', orderCourse);
     const StarRating = ({ ratings }) => {
         const numStars = parseInt(ratings);
         const starsArray = Array.from({ length: 5 }, (_, index) => (
@@ -31,11 +30,11 @@ const CourseDetails = () => {
         <>
             <Container className='mb-3'>
                 <Row>
-                    <Col lg={3}>
+                    <Col lg={3} className="order-lg-1 order-2">
                         <SideBar />
                     </Col>
-                    <Col lg={9}>
-                        <Card className="mt-3 shadow details-dark" ref={targetRef}>
+                    <Col lg={9} className="order-lg-2 order-1 mt-3">
+                        <Card className="shadow details-dark" ref={targetRef}>
                             <Card.Header className='d-flex justify-content-between align-items-center'><Card.Title className="fs-1 fw-bold">{name}</Card.Title>
                                 <FaFilePdf className='text-info fs-2 pdf-icon' onClick={() => toPDF()} />
                             </Card.Header>
